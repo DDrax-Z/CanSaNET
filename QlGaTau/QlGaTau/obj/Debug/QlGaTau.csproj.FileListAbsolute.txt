@@ -1,0 +1,11 @@
+D:\Github\CanSaNET\QlGaTau\QlGaTau\bin\Debug\QlGaTau.exe.config
+D:\Github\CanSaNET\QlGaTau\QlGaTau\bin\Debug\QlGaTau.exe
+D:\Github\CanSaNET\QlGaTau\QlGaTau\bin\Debug\QlGaTau.pdb
+D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.DangNhap.resources
+D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.Properties.Resources.resources
+D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.csproj.GenerateResource.Cache
+D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.exe
+D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.pdb
+D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.GiaoDien.resources
+D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.csprojResolveAssemblyReference.cache
+D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.QLTau.resources
