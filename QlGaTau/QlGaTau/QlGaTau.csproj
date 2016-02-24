@@ -76,12 +76,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLGatauDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QLGhe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLGhe.Designer.cs">
-      <DependentUpon>QLGhe.cs</DependentUpon>
-    </Compile>
     <Compile Include="QLTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,8 +109,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QLChuyenDi.resx">
+      <DependentUpon>QLChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTaiKhoan.resx">
+      <DependentUpon>QLTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLTau.resx">
       <DependentUpon>QLTau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLToa.resx">
+      <DependentUpon>QLToa.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -36,17 +36,17 @@
             this.txtTentau = new System.Windows.Forms.TextBox();
             this.cbLoaiTau = new System.Windows.Forms.ComboBox();
             this.Grid = new System.Windows.Forms.DataGridView();
-            this.qLGatauDataSet = new QlGaTau.QLGatauDataSet();
-            this.qLGatauDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MaTau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiTau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qLGatauDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLGatauDataSet = new QlGaTau.QLGatauDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLGatauDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLGatauDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLGatauDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -103,30 +103,19 @@
             // 
             this.Grid.AllowUserToAddRows = false;
             this.Grid.AllowUserToDeleteRows = false;
-            this.Grid.AutoGenerateColumns = false;
             this.Grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaTau,
             this.TenTau,
             this.LoaiTau});
-            this.Grid.DataSource = this.qLGatauDataSetBindingSource;
             this.Grid.Location = new System.Drawing.Point(57, 197);
             this.Grid.Name = "Grid";
             this.Grid.ReadOnly = true;
             this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grid.Size = new System.Drawing.Size(481, 191);
             this.Grid.TabIndex = 6;
-            // 
-            // qLGatauDataSet
-            // 
-            this.qLGatauDataSet.DataSetName = "QLGatauDataSet";
-            this.qLGatauDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // qLGatauDataSetBindingSource
-            // 
-            this.qLGatauDataSetBindingSource.DataSource = this.qLGatauDataSet;
-            this.qLGatauDataSetBindingSource.Position = 0;
+            this.Grid.SelectionChanged += new System.EventHandler(this.Grid_SelectionChanged);
             // 
             // MaTau
             // 
@@ -149,6 +138,16 @@
             this.LoaiTau.Name = "LoaiTau";
             this.LoaiTau.ReadOnly = true;
             // 
+            // qLGatauDataSetBindingSource
+            // 
+            this.qLGatauDataSetBindingSource.DataSource = this.qLGatauDataSet;
+            this.qLGatauDataSetBindingSource.Position = 0;
+            // 
+            // qLGatauDataSet
+            // 
+            this.qLGatauDataSet.DataSetName = "QLGatauDataSet";
+            this.qLGatauDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(108, 147);
@@ -157,6 +156,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -166,6 +166,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "Sửa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -175,6 +176,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // QLTau
             // 
@@ -195,8 +197,8 @@
             this.Text = "Quản lý tàu";
             this.Load += new System.EventHandler(this.QLTau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLGatauDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLGatauDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLGatauDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

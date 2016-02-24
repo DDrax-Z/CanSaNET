@@ -27,18 +27,96 @@ namespace QlGaTau
         }
 
         private void addItem()
-        { 
+        {
+            cbLoaiTau.Items.Add("Tàu nhanh");
+            cbLoaiTau.Items.Add("Chở hàng");
+            cbLoaiTau.Items.Add("Tàu thường");
         }
 
-        private void loadCombo()
+        private void resetForm()
         {
+            txtMatau.Clear();
+            cbLoaiTau.SelectedIndex = -1;
+            txtTentau.Clear();
+        }
 
+        private void loadInfo()
+        {
+            if (Grid.SelectedRows.Count == 0)
+                return;
+            DataGridViewRow row = Grid.SelectedRows[0];
+            txtMatau.Text = row.Cells["MaTau"].Value.ToString();
+            txtTentau.Text = row.Cells["TenTau"].Value.ToString();
+            cbLoaiTau.SelectedItem = row.Cells["LoaiTau"].Value.ToString();
         }
 
         private void QLTau_Load(object sender, EventArgs e)
         {
             loadGrid();
             addItem();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO Tau (MaTau, TenTau, LoaiTau) VALUES (@matau, @tentau,@loaitau)", DB.GetConnection());
+            cmd.Parameters.AddWithValue("@matau", txtMatau.Text);
+            cmd.Parameters.AddWithValue("@tentau", txtTentau.Text);
+            cmd.Parameters.AddWithValue("@loaitau", cbLoaiTau.GetItemText(cbLoaiTau.SelectedItem));
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Thêm mới thành công", "Thông báo");
+                loadGrid();
+                resetForm();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Lỗi");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string id = Grid.SelectedRows[0].Cells["MaTau"].Value.ToString();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Tau WHERE MaTau=@matau", DB.GetConnection());
+            cmd.Parameters.AddWithValue("@matau", id);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Xóa thành công", "Thông báo");
+                loadGrid();
+                resetForm();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Lỗi");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = Grid.SelectedRows[0];
+            String ma_old = row.Cells["MaTau"].Value.ToString();
+            SqlCommand cmd = new SqlCommand("UPDATE Tau SET MaTau=@matau, TenTau=@tentau, LoaiTau=@loaitau WHERE Matau=@ma_old", DB.GetConnection());
+            cmd.Parameters.AddWithValue("@matau", txtMatau.Text);
+            cmd.Parameters.AddWithValue("@tentau", txtTentau.Text);
+            cmd.Parameters.AddWithValue("@ma_old", ma_old);
+            cmd.Parameters.AddWithValue("@loaitau", cbLoaiTau.GetItemText(cbLoaiTau.SelectedItem));
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Cập nhật thành công", "Thông báo");
+                loadGrid();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Lỗi");
+            }
+        }
+
+        private void Grid_SelectionChanged(object sender, EventArgs e)
+        {
+            loadInfo();
         }
     }
 }
