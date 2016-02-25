@@ -76,6 +76,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLGatauDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLGhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLGhe.Designer.cs">
+      <DependentUpon>QLGhe.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DatVe.resx">
+      <DependentUpon>DatVe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien.resx">
       <DependentUpon>GiaoDien.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +120,9 @@
     </Compile>
     <EmbeddedResource Include="QLChuyenDi.resx">
       <DependentUpon>QLChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLGhe.resx">
+      <DependentUpon>QLGhe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLTaiKhoan.resx">
       <DependentUpon>QLTaiKhoan.cs</DependentUpon>

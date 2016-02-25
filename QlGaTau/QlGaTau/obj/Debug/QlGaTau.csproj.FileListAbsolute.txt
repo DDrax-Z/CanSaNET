@@ -12,3 +12,5 @@ D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.QLTau.resources
 D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.QLTaiKhoan.resources
 D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.QLToa.resources
 D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.QLChuyenDi.resources
+D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.QLGhe.resources
+D:\Github\CanSaNET\QlGaTau\QlGaTau\obj\Debug\QlGaTau.DatVe.resources
