@@ -79,7 +79,6 @@ namespace QlGaTau
         private void loadInfocd()
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM Chuyendi WHERE Macd=@macd", DB.GetConnection());
-            string a = cbMacd.SelectedValue.ToString();
             cmd.Parameters.AddWithValue("@macd", cbMacd.SelectedValue.ToString());
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
