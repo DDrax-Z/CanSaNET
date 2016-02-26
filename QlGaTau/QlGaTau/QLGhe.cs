@@ -66,7 +66,7 @@ namespace QlGaTau
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO Ghe (MaGhe, MaToa) VALUES (@maghe, @matoa)", DB.GetConnection());
             cmd.Parameters.AddWithValue("@maghe",txtMaghe.Text);
-            cmd.Parameters.AddWithValue("@matoa", cbMatoa.SelectedValue);
+            cmd.Parameters.AddWithValue("@matoa", cbMatoa.SelectedValue.ToString());
             try
             {
                 cmd.ExecuteNonQuery();

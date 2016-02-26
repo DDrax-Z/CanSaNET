@@ -56,7 +56,13 @@ namespace QlGaTau
             addItem();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void Grid_SelectionChanged(object sender, EventArgs e)
+        {
+            loadInfo();
+        }
+
+        private void Them_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO Tau (MaTau, TenTau, LoaiTau) VALUES (@matau, @tentau,@loaitau)", DB.GetConnection());
             cmd.Parameters.AddWithValue("@matau", txtMatau.Text);
@@ -75,25 +81,7 @@ namespace QlGaTau
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string id = Grid.SelectedRows[0].Cells["MaTau"].Value.ToString();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Tau WHERE MaTau=@matau", DB.GetConnection());
-            cmd.Parameters.AddWithValue("@matau", id);
-            try
-            {
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa thành công", "Thông báo");
-                loadGrid();
-                resetForm();
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Lỗi");
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void Sua_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = Grid.SelectedRows[0];
             String ma_old = row.Cells["MaTau"].Value.ToString();
@@ -114,9 +102,22 @@ namespace QlGaTau
             }
         }
 
-        private void Grid_SelectionChanged(object sender, EventArgs e)
+        private void Xoa_Click(object sender, EventArgs e)
         {
-            loadInfo();
+            string id = Grid.SelectedRows[0].Cells["MaTau"].Value.ToString();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Tau WHERE MaTau=@matau", DB.GetConnection());
+            cmd.Parameters.AddWithValue("@matau", id);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Xóa thành công", "Thông báo");
+                loadGrid();
+                resetForm();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Lỗi");
+            }
         }
     }
 }
